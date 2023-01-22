@@ -1,4 +1,4 @@
-package controller;
+package producer_service.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

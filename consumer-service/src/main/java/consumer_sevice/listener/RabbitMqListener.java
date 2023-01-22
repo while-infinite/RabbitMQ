@@ -1,4 +1,4 @@
-package listener;
+package consumer_sevice.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
@@ -12,11 +12,11 @@ public class RabbitMqListener {
 
     @RabbitListener(queues = "firstQueue")
     public void processFirstQueue(String message){
-        log.info("Received from firstQueue : {}" + message);
+        log.info("Received from firstQueue : {}", message);
     }
 
     @RabbitListener(queues = "secondQueue")
     public void processSecondQueue(String message){
-        log.info("Received from secondQueue : {}" + message);
+        log.info("Received from secondQueue : {}", message);
     }
 }

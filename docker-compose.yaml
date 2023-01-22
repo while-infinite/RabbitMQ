@@ -1,9 +1,25 @@
 version: '3.7'
 
 services:
-  rabbitmq:
+  rabbit:
     image: rabbitmq:3.11-management
     ports:
       - "5672:5672"
       - "15672:15672"
+
+  producer-service:
+    image: karenfarmanyan/producer-service:latest
+    container_name: producer-service
+    depends_on:
+      - rabbit
+    ports:
+      - "8080:8080"
+
   consumer-service:
+    image: karenfarmanyan/consumer-service:latest
+    container_name: consumer-service
+    depends_on:
+      - producer-service
+    ports:
+      - "8090:8090"
+

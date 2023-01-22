@@ -1,4 +1,4 @@
-package config;
+package producer_service.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
